@@ -271,7 +271,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
         $input = $this->all();
 
         foreach ($keys as $value) {
-            if (! array_key_exists($value, $input)) {
+            if (! Arr::has($input, $value)) {
                 return false;
             }
         }
@@ -383,7 +383,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
      */
     public function intersect($keys)
     {
-        return array_filter($this->only($keys));
+        return array_filter($this->only(is_array($keys) ? $keys : func_get_args()));
     }
 
     /**
@@ -459,7 +459,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
      *
      * @param  string  $key
      * @param  mixed  $default
-     * @return \Symfony\Component\HttpFoundation\File\UploadedFile|array|null
+     * @return \Illuminate\Http\UploadedFile|array|null
      */
     public function file($key = null, $default = null)
     {
@@ -496,6 +496,17 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     protected function isValidFile($file)
     {
         return $file instanceof SplFileInfo && $file->getPath() != '';
+    }
+
+    /**
+     * Determine if a header is set on the request.
+     *
+     * @param  string  $key
+     * @return bool
+     */
+    public function hasHeader($key)
+    {
+        return ! is_null($this->header($key));
     }
 
     /**
