@@ -11,7 +11,9 @@ Instructions:
 - Copy `.env.example` to `.env`
 - Run the command `vagrant up`
 - Rename `test.conf` to the subdomain you want, ending with `.conf`
-- Change the lines following `# CHANGE THIS LINE #` in: `test.conf`, `privileged.sh`, `unprivileged.sh`, `Vagrantfile`
+- Change the lines following `# CHANGE THIS LINE #` in: `test.conf`, `privileged.sh`, `unprivileged.sh`, `Vagrantfile` to the same subdomain as your `.conf`
+- Add `<subdomain>.localhost.com` to your host file with the ip `127.0.0.1`
+- Access your site at `<subdomain>.localhost.com:8080`
 
 You will need to modify the file, `provisioners/privileged.sh` to use your own desired password for the MySQL server.
 
