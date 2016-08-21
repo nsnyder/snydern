@@ -5,8 +5,8 @@ This repository will get you quickly up and running with the following:
 - Laravel
 
 Instructions:
-- Install virtualbox
-- Install Vagrant
+- Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- Install [Vagrant](https://www.vagrantup.com/downloads.html)
 - Clone the repository
 - Copy `.env.example` to `.env`
 - Run the command `vagrant up`
