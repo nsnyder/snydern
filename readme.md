@@ -10,6 +10,8 @@ Instructions:
 - Clone the repository
 - Copy `.env.example` to `.env`
 - Run the command `vagrant up`
+- Rename `test.conf` to the subdomain you want, ending with `.conf`
+- Change the lines following `# CHANGE THIS LINE #` in: `test.conf`, `privileged.sh`, `unprivileged.sh`, `Vagrantfile`
 
 You will need to modify the file, `provisioners/privileged.sh` to use your own desired password for the MySQL server.
 

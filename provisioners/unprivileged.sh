@@ -1,2 +1,2 @@
-cd /var/www/html/snydern
+cd /var/www/html/test
 composer install
