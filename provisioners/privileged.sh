@@ -6,3 +6,5 @@ sudo cp /var/www/html/snydern/provisioners/apache2.conf /etc/apache2/apache2.con
 sudo cp /var/www/html/snydern/provisioners/snydern.conf /etc/apache2/sites-available/snydern.conf
 sudo ln /etc/apache2/sites-available/snydern.conf /etc/apache2/sites-enabled/snydern.conf
 sudo cp /var/www/html/snydern/provisioners/envvars /etc/apache2/envvars
+
+sudo systemctl restart apache2.service
