@@ -18,11 +18,17 @@ You will want to update `.env` with the password above, as well as with the defa
 MySql Workbench settings for the server are as follows:
 Connection Method: Standard TCP/IP over SSH
 SSH Hostname: `192.168.33.10:22` (from config.vm.network in Vagrantfile)
+
 SSH Username: `vagrant`
+
 SSH Keyfile: `/path/to/project/.vagrant/machines/default/virtualbox/private_key`
+
 MySQL Hostname: `127.0.0.1`
+
 MySQL Server Port: `3306`
+
 Username: `root`
+
 Password: `not_safe_password` (or whatever you changed it to)
 
 Note: Testing the database connection may fail the first time. Try again.
