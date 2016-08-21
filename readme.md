@@ -11,19 +11,19 @@ Instructions:
 - Copy `.env.example` to `.env`
 - Run the command `vagrant up`
 
-You will need to modify the file, "provisioners/privileged.sh" to use your own desired password for the MySQL server.
+You will need to modify the file, `provisioners/privileged.sh` to use your own desired password for the MySQL server.
 
 You will want to update `.env` with the password above, as well as with the default database that you setup. I recommend using MySQL Workbench as your DBMS.
 
 MySql Workbench settings for the server are as follows:
 Connection Method: Standard TCP/IP over SSH
-SSH Hostname: 192.168.33.10:22 (from config.vm.network in Vagrantfile)
-SSH Username: vagrant
-SSH Keyfile: /path/to/project/.vagrant/machines/default/virtualbox/private_key
-MySQL Hostname: 127.0.0.1
-MySQL Server Port: 3306
-Username: root
-Password: not_safe_password (or whatever you changed it to)
+SSH Hostname: `192.168.33.10:22` (from config.vm.network in Vagrantfile)
+SSH Username: `vagrant`
+SSH Keyfile: `/path/to/project/.vagrant/machines/default/virtualbox/private_key`
+MySQL Hostname: `127.0.0.1`
+MySQL Server Port: `3306`
+Username: `root`
+Password: `not_safe_password` (or whatever you changed it to)
 
 Note: Testing the database connection may fail the first time. Try again.
 
