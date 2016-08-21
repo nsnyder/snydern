@@ -4,7 +4,7 @@ sudo apt-get update
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password not_safe_password'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password not_safe_password'
 
-sudo apt-get install -y php5-common libapache2-mod-php5 php5-cli mysql-server
+sudo apt-get install -y php5-common libapache2-mod-php5 php5-cli mysql-server php5-mysql
 
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 sudo cp /var/www/html/snydern/provisioners/apache2.conf /etc/apache2/apache2.conf

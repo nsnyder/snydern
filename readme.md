@@ -4,6 +4,13 @@ This repository will get you quickly up and running with the following:
 - MySQL
 - Laravel
 
+Instructions:
+- Install virtualbox
+- Install Vagrant
+- Clone the repository
+- Copy `.env.example` to `.env`
+- Run the command `vagrant up`
+
 You will need to modify the file, "provisioners/privileged.sh" to use your own desired password for the MySQL server.
 
 MySql Workbench settings for the server are as follows:
