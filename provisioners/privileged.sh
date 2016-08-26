@@ -10,7 +10,6 @@ sudo apt-get update
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password not_safe_password'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password not_safe_password'
 
-#sudo apt-get install -y php5-common libapache2-mod-php5 php5-cli mariadb-server php5-mysql
 sudo apt-get install -y mariadb-server
 sudo apt-get install -y php7.0-common libapache2-mod-php7.0 php7.0-cli php7.0-mysql php-xml php7.0-mbstring
 
