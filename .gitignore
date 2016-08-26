@@ -40,6 +40,8 @@ Thumbs.db
 .idea
 .vagrant
 vendor
+node_modules
+public
 
 # Private Files #
 .env
