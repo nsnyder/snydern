@@ -41,7 +41,7 @@ Vagrant.configure(2) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # CHANGE THIS LINE #
-  config.vm.synced_folder "./", "/var/www/html/test"
+  config.vm.synced_folder "./", "/var/www/html/snydern"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
