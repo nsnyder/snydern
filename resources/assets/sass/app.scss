@@ -1,2 +1,66 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  margin: 0;
+  padding: 0;
+  height: 60%;
+  width: 100%;
+  overflow: hidden;
+  display: table;
+  position: relative;
+}
+
+.section .middle-align {
+  display: table-cell;
+  vertical-align: middle;
+  overflow: hidden;
+  width: 25%;
+  position: absolute;
+  float: right;
+  border: solid blue 1px;
+  height: 100%;
+}
+
+.edge-triangle {
+  overflow: hidden;
+  background-color: black;
+  color: white;
+  padding-bottom: 100%;
+  width: 100%;
+  position: absolute;
+  //-webkit-transform-origin: 0 0;
+  //-moz-transform-origin: 0 0;
+  //-ms-transform-origin: 0 0;
+  //-o-transform-origin: 0 0;
+  //transform-origin: 100% 0;
+  //-webkit-transform: rotate(-45deg) translateX(50%);
+  //-moz-transform: rotate(-45deg) translateX(50%);
+  //-ms-transform: rotate(-45deg) translateX(50%);
+  //-o-transform: rotate(-45deg) translateX(50%);
+  //transform: rotate(-45deg) translateY(-20.5%) translateX(20.5%);
+
+  .content {
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: .1em .5em;
+    font-size: 3em;
+  }
+}
+
+.section-1 {
+  @extend .section;
+  background-color: #f00;
+}
+
+.section-2 {
+  @extend .section;
+  background-color: #0f0;
+}
