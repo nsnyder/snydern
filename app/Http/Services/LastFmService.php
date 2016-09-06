@@ -3,6 +3,7 @@
 namespace App\Http\Services;
 
 use Config;
+use Illuminate\Support\Collection;
 
 class LastFmService
 {
@@ -15,6 +16,18 @@ class LastFmService
      */
     protected $base_url;
 
+    /**
+     * Send the request to Last.fm
+     *
+     * @param array $arguments
+     * Arguments to put in the query string for the request
+     * @param bool $get_json
+     * Whether or not to return a json object. If false, returns XML
+     * @param string $path
+     * The path is really just the api version right now
+     *
+     * @return object
+     */
     private function submitRequest(
         array $arguments,
         bool $get_json = true,
@@ -57,6 +70,25 @@ class LastFmService
      */
     public function getLatestTrack()
     {
-        return $this->submitRequest(['method' => 'user.getrecenttracks']);
+        return $this->getRecentTracks(1)->first();
+    }
+
+    /**
+     * Get the most recent tracks from Last.fm
+     *
+     * @param int $number
+     * @param int $page
+     * @param bool $extended
+     *
+     * @return Collection
+     */
+    public function getRecentTracks(int $number, int $page = 1, bool $extended = false)
+    {
+        return new Collection($this->submitRequest([
+            'method' => 'user.getrecenttracks',
+            'limit' => $number,
+            'page' => $page,
+            'extended' => $extended ? 1 : 0
+        ])->recenttracks->track);
     }
 }
